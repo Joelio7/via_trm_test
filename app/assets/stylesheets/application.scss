@@ -1,0 +1,12 @@
+@import "bootstrap";
+@import "rails_bootstrap_forms";
+@import "posts";
+@import "comments";
+
+li {
+  padding: 20px;
+}
+.container {
+  text-align: center;
+  margin-top: 10px;
+}

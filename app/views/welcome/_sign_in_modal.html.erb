@@ -1,0 +1,12 @@
+<div class="modal-dialog modal-sm" id="register-modal">
+  <div class="modal-content">
+    <div class="modal-header"style="margin-left:35px" >
+      <%= bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <%= f.email_field :email, autofocus: true %>
+          <%= f.password_field :password, autocomplete: "off" %>
+          <%= f.submit "Log in" %>
+      <% end %>
+    </div>
+<%= render "devise/shared/links" %>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<h1><%= @post.title %></h1> <br>
+  <%= @post.body %> <br>
+  <p> written By <%= @post.user.first_name%> <%= @post.user.last_name%> </p>
+  <%= link_to "Back to Posts", posts_path, :method => "get", class: 'btn btn-warning' %>
+  <h5 style="margin-top: 20px;"><%= @post.comments.count %> Comments available</h5>
+  <button id="comment-button" onclick="toggleComments()" class="btn btn-primary">Show Comment Section</button></div>
+<div id="comment-section" class="create-comment"style="width:400px;margin-left:370px;margin-top:30px;display:none;">
+  <h3>Comment Section</h3>
+  <div class='new-comment'>
+     <%= render 'comments/form', comment: Comment.new, post: @post %>
+  </div>
+  <div class='js-comments'>
+      <%= render @post.comments %>
+  </div>
+</div>

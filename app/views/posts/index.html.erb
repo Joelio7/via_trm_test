@@ -1,0 +1,16 @@
+<h1> Post Feed </h1>
+<div class="row">
+  <%  @posts.each do |post| %>
+  <div class="post-columns col-md-4">
+    <%= link_to post do %>
+   <div class="posts">
+      <h4><%= post.title %></h4>
+       <p>by</p>
+       <h5><%= post.user.first_name %> <%= post.user.last_name %></h5>
+      <p> posted  <%= time_ago_in_words(post.created_at) %> ago </p>
+     </div>
+     <% end %>
+  </div>
+  <% end %>
+</div>
+<%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
